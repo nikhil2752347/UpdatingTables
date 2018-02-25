@@ -1,0 +1,32 @@
+<html>
+<head>
+    <!--
+    This is the library that provides websocket streaming pub/sub
+    The dev serverver is serving the html and javascript, but it also provides updating fx data on /fx/prices.
+     -->
+    <script src="stomp.js"></script>
+    <script src="sparkline.js"></script>
+</head>
+<body>
+
+<!-- This is a description of what you should do for this task.  You can remove it for your answer -->
+<section class="content">
+    <div id="dvTable"></div>
+    <h2>Notes</h2>
+    <ul>
+        <li>onload it will take 30 seconds for table to get created</li>
+        <li><b>Approach:-</b></br> 1)I am pushing the received data in 'receivedData' array and after 30 seconds timeout doing all operations on it. </br> 2) Secondly,I am creating an array of unique currencyPair ('getUniqueNameList()'). </br> 3)Passing the unique array to 'getFilteredList()' function and doing all filtering and sorting logic inside it. </br> 4) The data which I get from 'getFilteredList()' is both sorted and have an array for sparkline too, passing it to 'getTableData()' to generate the table.</li>
+       <li><b>Assumption:-</b></br>1)I am not storing continuous streamed data beyond 30 seconds in UI.</br>2) every currency pair should have a unique entry into the table, the entry that has the highest BestBid.</li>
+        <li><b>libraries/frameworks:-</b> </br>1)If Underscore.js or Lodash.js was used for array and sorting operation,code would have been more cleaner.</li>
+        <li><b>name:-</b>Nikhil Sundriyal</br><b>email:-</b>nikhil2752347@gmail.com</li>
+    </ul>
+
+   
+</section>
+
+<!-- Code you write in index.js and anything it depends on will be bundled into bundle.js and
+     is included here -->
+<script src="bundle.js"></script>
+
+</body>
+</html>
